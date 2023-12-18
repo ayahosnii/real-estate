@@ -8,10 +8,9 @@
 </head>
 <body>
 <h1>Modern House Details</h1>
-{{dd($modernHouse)}}
 
 <ul>
-    <li><strong>Number of Children Rooms:</strong> {{ $modernHouse->getRooms()->getChildrenRoom()->getNumber() }}</li>
+    <li><strong>Number of bed Rooms:</strong> {{ $modernHouse->getRooms()->getbedRoom()->getNumber() }}</li>
     <li><strong>Number of Living Rooms:</strong> {{ $modernHouse->getRooms()->getLivingRoom()->getNumber() }}</li>
     </ul>
 <ul>

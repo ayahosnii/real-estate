@@ -2,38 +2,52 @@
 
 namespace App\Models\House\Rooms;
 
-use App\Models\House\Rooms\MainRooms\ChildrenRoom;
+use App\Models\House\Features\Features;
+use App\Models\House\Rooms\MainRooms\BathRoom;
+use App\Models\House\Rooms\MainRooms\BedRoom;
 use App\Models\House\Rooms\MainRooms\LivingRoom;
 
 class Rooms
 {
-    private ChildrenRoom $childrenRoom;
+    private BedRoom $bedRoom;
     private LivingRoom $livingRoom;
+    private BathRoom $bathRoom;
 
 
     /**
      * Room constructor.
-     * @param ChildrenRoom $childrenRoom
+     * @param BedRoom $bedRoom
      * @param LivingRoom $livingRoom
+     * @param BathRoom $bathRoom
      */
-    public function __construct(ChildrenRoom $childrenRoom, LivingRoom $livingRoom)
+    public function __construct(BedRoom $bedRoom, LivingRoom $livingRoom, BathRoom $bathRoom)
     {
-        $this->childrenRoom = $childrenRoom;
+        $this->bedRoom = $bedRoom;
         $this->livingRoom = $livingRoom;
+        $this->bathRoom = $bathRoom;
     }
 
-    public function getChildrenRoom(): ChildrenRoom
+    public function getbedRoom(): BedRoom
     {
-        return $this->childrenRoom;
+        return $this->bedRoom;
+    }
+
+    public function getBathRoom(): BathRoom
+    {
+        return $this->bathRoom;
+    }
+    public function getFeatures(): Features
+    {
+        return $this->features;
     }
 
     public function getLivingRoom(): LivingRoom
     {
         return $this->livingRoom;
     }
-    public function getNumberOfChildrenRooms(): int
+    public function getNumberOfbedRooms(): int
     {
-        return $this->childrenRoom->getNumber();
+        return $this->bedRoom->getNumber();
     }
     public function getNumberOfLivingRooms(): int
     {

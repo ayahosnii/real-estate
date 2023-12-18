@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Models\House\Types;
+namespace App\Models\House;
 
-use App\Models\House\Builder;
+use App\Models\House\Types\House;
+use App\Models\House\Types\ModernHouseFactory;
+use App\Models\ModernHouse;
 
 class Director
 {
@@ -25,5 +27,12 @@ class Director
     public function makeHouse(): House
     {
         return $this->builder->getHouse();
+    }
+    public function storeHouse()
+    {
+        $modernModel =  new ModernHouse();
+        $modernModel->makeHouse();
+        $modernModel->save();
+        return $modernModel;
     }
 }

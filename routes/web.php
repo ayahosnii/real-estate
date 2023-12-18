@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/create-apartment-listing', [ListingController::class, 'createApartmentListing']);
+
+Route::get('/', [ListingController::class, 'createApartmentListing']);
+Route::get('/employee', [ListingController::class, 'employee']);

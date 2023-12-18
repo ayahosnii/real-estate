@@ -3,17 +3,18 @@
 namespace App\Models\House\Types;
 
 use App\Models\House\Builders\ModernHouseBuilder;
-use App\Models\House\Features\Features;
+use App\Models\House\Builders\PenthouseBuilder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-class ModernHouseFactory extends House implements IHouseFactory
+
+class PenthouseFactory extends House implements IHouseFactory
 {
     public function createHouse(): IHouseBuilder
     {
-        $builder = new ModernHouseBuilder();
+        $builder = new PenthouseBuilder();
 
         // Assume Rooms and Features are properly constructed in the builder
-        $rooms = $builder->buildRooms(5);
+        $rooms = $builder->buildRooms();
 
         // Create a House instance
         $house = new House($rooms);

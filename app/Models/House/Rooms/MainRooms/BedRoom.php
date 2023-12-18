@@ -2,27 +2,34 @@
 
 namespace App\Models\House\Rooms\MainRooms;
 
-class ChildrenRoom
+class BedRoom
 {
 
     private int $numberOfRooms;
+    private int $numberOfBeds;
 
     /**
-     * ChildrenRoom constructor.
+     * BedRoom constructor.
      * @param integer $numberOfRooms
      */
-    public function __construct(int $numberOfRooms)
+    public function __construct(int $numberOfRooms, int $numberOfBeds)
     {
         $this->numberOfRooms = $numberOfRooms;
+        $this->numberOfBeds = $numberOfBeds;
     }
 
     /**
-     * Get the number of children rooms.
+     * Get the number of bed rooms.
      *
      * @return int
      */
     public function getNumber(): int
     {
         return $this->numberOfRooms;
+    }
+
+    public function getNumberOfBeds(): int
+    {
+        return $this->numberOfBeds;
     }
 }

@@ -38,10 +38,14 @@ class House
         return $this->houseInformation;
     }
 
+    public function setNumberOfBedRooms(int $numberOfBedRooms)
+    {
+        $this->numberOfBedRooms = $numberOfBedRooms;
+    }
     public function getDescription(): string
     {
-        $description = 'This house has ' . $this->rooms->getChildrenRoom()->getNumber() . ' rooms.'
-            . $this->rooms->getChildrenRoom()->getNumberOfBeds() . ' beds.';
+        $description = 'This house has ' . $this->rooms->getbedRoom()->getNumber() . ' rooms.'
+            . $this->rooms->getbedRoom()->getNumberOfBeds() . ' beds.';
 
         if ($this->features->hasSwimmingPool()) {
             $description .= ' It has a swimming pool.';

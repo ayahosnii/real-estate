@@ -11,11 +11,12 @@ use App\Models\House\Rooms\MainRooms\LivingRoom;
 use App\Models\House\Rooms\Rooms;
 use App\Models\House\Types\House;
 use App\Models\House\Types\ModernHouseFactory;
+use App\Models\House\Types\VillaFactory;
 use App\Traits\SetFeaturesTrait;
 use App\Traits\SetHouseInformationTrait;
 use App\Traits\SetRoomsTrait;
 
-class ModernHouseBuilder extends Builder
+class PenthouseBuilder extends Builder
 {
     //Set Values
     use SetRoomsTrait;
@@ -53,10 +54,11 @@ class ModernHouseBuilder extends Builder
         $contractReady = $this->contractReady;
         $paymentProcess = 'Bank';
         $address = 'Mystic Grove Way, Eldertown, CA 67890';
-        $type = 'Modern House';
+        $type = 'Penthouse';
         $safety = true;
         $floorNumber = 4;
         $numberOfRooms = 2;
+
 
         return new HouseInformation($id, $image, $price, $totalArea, $contractReady, $paymentProcess, $address, $type, $safety, $floorNumber, $numberOfRooms);
     }
@@ -69,5 +71,6 @@ class ModernHouseBuilder extends Builder
         $modernHouse->setHouseInformation($this->buildHouseInformation());
         return $modernHouse;
     }
+
 
 }
